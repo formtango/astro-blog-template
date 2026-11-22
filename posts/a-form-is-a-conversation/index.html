@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>A form is a conversation | Galley</title><meta name="description" content="Labels, errors and the thank-you message are all lines of dialogue. Write them like you mean it."><meta name="author" content="Odette Marlow"><meta name="generator" content="Astro v7.3.8"><link rel="canonical" href="https://formtango.github.io/astro-blog-template/posts/a-form-is-a-conversation/"><link rel="icon" type="image/svg+xml" href="/astro-blog-template/favicon.svg"><link rel="alternate" type="application/rss+xml" title="Galley" href="/astro-blog-template/rss.xml"><link rel="sitemap" href="/astro-blog-template/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="A form is a conversation"><meta property="og:description" content="Labels, errors and the thank-you message are all lines of dialogue. Write them like you mean it."><meta property="og:url" content="https://formtango.github.io/astro-blog-template/posts/a-form-is-a-conversation/"><meta property="og:site_name" content="Galley"><meta name="twitter:card" content="summary"><meta name="theme-color" content="#f3eee3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#15130f" media="(prefers-color-scheme: dark)"><script>
+      // Apply a saved theme before the page paints, so there is no flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/astro-blog-template/_astro/Base.BG5ZlA61.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap"><a class="brand" href="/astro-blog-template/" aria-label="Galley, home"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M13.5 6h11v2.6h-2.6V26h-2.6V8.6h-2.5V26h-2.6v-7.6c-3.9-.2-6.7-2.8-6.7-6.2C7.5 8.6 10.2 6 13.5 6z"></path></svg>Galley</a><nav class="site-nav" aria-label="Main"><ul><li><a href="/astro-blog-template/" aria-current="page">Posts</a></li><li><a href="/astro-blog-template/tags/">Tags</a></li><li><a href="/astro-blog-template/about/">About</a></li><li><a href="/astro-blog-template/contact/">Contact</a></li></ul></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path fill="currentColor" d="M12 3a9 9 0 0 1 0 18z"></path></svg></button></div></header><main id="main" tabindex="-1"><article class="wrap"><header class="post-head"><p class="meta">Note 02<span class="dot" aria-hidden="true">/</span><time datetime="2026-11-03T00:00:00.000Z">November 3, 2026</time></p><h1>A form is a conversation</h1><p class="standfirst">Labels, errors and the thank-you message are all lines of dialogue. Write them like you mean it.</p></header><div class="post-body"><aside class="post-margin" aria-label="About this note"><dl><div><dt class="meta">Written by</dt><dd><a href="/astro-blog-template/about/">Odette Marlow</a></dd></div><div><dt class="meta">Published</dt><dd>November 3, 2026</dd></div><div><dt class="meta">Length</dt><dd>2 min read</dd></div><div><dt class="meta">Filed under</dt><dd><ul class="tag-list"><li><a class="tag" href="/astro-blog-template/tags/forms/">Forms</a></li><li><a class="tag" href="/astro-blog-template/tags/accessibility/">Accessibility</a></li></ul></dd></div></dl></aside><div class="prose"><p>A form is the one place on a website where the visitor does the talking. Everything else is you holding forth. So it is odd how often the form is the least considered part of a page: three gray boxes, a button that says Submit, and no sign afterwards that anyone was listening.</p>
+<p>Treat it as a conversation and the right decisions mostly make themselves.</p>
+<h2 id="ask-clearly">Ask clearly</h2>
+<p>Every field gets a visible label, tied to its input with <code>for</code> and <code>id</code>. Placeholder text is not a label. It vanishes the moment someone starts typing, which is exactly when they want to check what was asked.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> for</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#E1E4E8">&gt;Email address&lt;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#B392F0"> autocomplete</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#B392F0"> required</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<p>The <code>type</code> and <code>autocomplete</code> attributes are small courtesies. They bring up the right keyboard on a phone and let the browser fill in what it already knows.</p>
+<h2 id="ask-for-less">Ask for less</h2>
+<p>Each extra field is a reason to give up. A contact form needs a name, a way to reply and a message. If you would not ask the question in person within the first minute of meeting someone, leave it off the form.</p>
+<h2 id="answer">Answer</h2>
+<p>When the form is sent, say so in plain words, right where the person is looking. When something fails, say what happened and keep everything they typed. Losing a carefully written message to a vague error is the web at its rudest.</p>
+<h2 id="make-it-work-without-scripts">Make it work without scripts</h2>
+<p>A plain HTML form with an <code>action</code> and a <code>method</code> will post its contents with no JavaScript at all. Start there. Then add a small script that sends the same data in the background and shows the reply in place. If the script never loads, the form still does its job, and nobody has to know which path they took.</p>
+<p>A form that listens well is the cheapest good impression a site can make.</p>
+</div></div><nav class="post-nav" aria-label="More notes"><p class="prev"><span class="meta">Earlier</span><a href="/astro-blog-template/posts/the-sixty-six-character-line/">The sixty-six character line</a></p><p class="next"><span class="meta">Later</span><a href="/astro-blog-template/posts/ship-the-static-site-first/">Ship the static site first</a></p></nav></article></main><aside class="newsletter" aria-labelledby="newsletter-title"><div class="wrap"><div class="newsletter-copy"><p class="meta">By email</p><h2 id="newsletter-title">Get the next note when it is ready.</h2><p>One short email whenever a new post goes up, a couple of times a month. No tracking, and you can leave whenever you like.</p></div><form class="form" action="https://formtango.com/f/YOUR_NEWSLETTER_FORM_ID" method="POST" data-contact data-success="You are on the list. Thanks for reading!"><div class="field"><label for="newsletter-email">Email address</label><div class="field-row"><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="button" type="submit">Subscribe</button></div></div><input class="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"><p data-status role="status" hidden></p></form></div></aside><footer class="site-footer"><div class="wrap"><p>&copy; 2026 Odette Marlow</p><ul><li><a href="/astro-blog-template/rss.xml">RSS feed</a></li><li><a href="/astro-blog-template/tags/">Tags</a></li><li><a href="/astro-blog-template/contact/">Contact</a></li></ul><p>Forms handled by <a href="https://formtango.com">FormTango</a></p></div></footer><script>
+      // Light / dark switch. Follows the system until someone chooses, then remembers.
+      (function () {
+        var toggle = document.querySelector('[data-theme-toggle]');
+        if (!toggle) return;
+        toggle.addEventListener('click', function () {
+          var root = document.documentElement;
+          var current =
+            root.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var next = current === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+      })();
+
+      // Sends each form to its FormTango address without leaving the page.
+      // With JavaScript off, the forms still work as a normal POST.
+      // While an address in src/forms.ts still contains "YOUR_", the form runs in demo mode.
+      (function () {
+        document.querySelectorAll('form[data-contact]').forEach(function (form) {
+          var status = form.querySelector('[data-status]');
+          var button = form.querySelector('button[type="submit"]');
+          var label = button.textContent;
+
+          function say(text, kind) {
+            status.textContent = text;
+            status.dataset.kind = kind;
+            status.hidden = false;
+          }
+
+          form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (form.action.indexOf('YOUR_') !== -1) {
+              say(
+                'Demo mode: nothing was sent. Add your FormTango form address in src/forms.ts and this form will send for real.',
+                'info'
+              );
+              return;
+            }
+            button.disabled = true;
+            button.textContent = 'Sending…';
+            fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+              .then(function (response) {
+                return response.json().then(function (body) {
+                  if (!response.ok || !body.ok) throw body;
+                });
+              })
+              .then(function () {
+                form.reset();
+                say(form.dataset.success || 'Thanks! Your message has been sent.', 'ok');
+              })
+              .catch(function (body) {
+                say((body && body.error) || 'Something went wrong. Please try again.', 'error');
+              })
+              .then(function () {
+                button.disabled = false;
+                button.textContent = label;
+              });
+          });
+        });
+      })();
+    </script></body></html>

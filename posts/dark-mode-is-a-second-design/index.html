@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dark mode is a second design | Galley</title><meta name="description" content="Inverting the colors is where most dark themes start and where they should not end."><meta name="author" content="Odette Marlow"><meta name="generator" content="Astro v7.3.8"><link rel="canonical" href="https://formtango.github.io/astro-blog-template/posts/dark-mode-is-a-second-design/"><link rel="icon" type="image/svg+xml" href="/astro-blog-template/favicon.svg"><link rel="alternate" type="application/rss+xml" title="Galley" href="/astro-blog-template/rss.xml"><link rel="sitemap" href="/astro-blog-template/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="Dark mode is a second design"><meta property="og:description" content="Inverting the colors is where most dark themes start and where they should not end."><meta property="og:url" content="https://formtango.github.io/astro-blog-template/posts/dark-mode-is-a-second-design/"><meta property="og:site_name" content="Galley"><meta name="twitter:card" content="summary"><meta name="theme-color" content="#f3eee3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#15130f" media="(prefers-color-scheme: dark)"><script>
+      // Apply a saved theme before the page paints, so there is no flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/astro-blog-template/_astro/Base.BG5ZlA61.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap"><a class="brand" href="/astro-blog-template/" aria-label="Galley, home"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M13.5 6h11v2.6h-2.6V26h-2.6V8.6h-2.5V26h-2.6v-7.6c-3.9-.2-6.7-2.8-6.7-6.2C7.5 8.6 10.2 6 13.5 6z"></path></svg>Galley</a><nav class="site-nav" aria-label="Main"><ul><li><a href="/astro-blog-template/" aria-current="page">Posts</a></li><li><a href="/astro-blog-template/tags/">Tags</a></li><li><a href="/astro-blog-template/about/">About</a></li><li><a href="/astro-blog-template/contact/">Contact</a></li></ul></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path fill="currentColor" d="M12 3a9 9 0 0 1 0 18z"></path></svg></button></div></header><main id="main" tabindex="-1"><article class="wrap"><header class="post-head"><p class="meta">Note 04<span class="dot" aria-hidden="true">/</span><time datetime="2026-11-17T00:00:00.000Z">November 17, 2026</time></p><h1>Dark mode is a second design</h1><p class="standfirst">Inverting the colors is where most dark themes start and where they should not end.</p></header><div class="post-body"><aside class="post-margin" aria-label="About this note"><dl><div><dt class="meta">Written by</dt><dd><a href="/astro-blog-template/about/">Odette Marlow</a></dd></div><div><dt class="meta">Published</dt><dd>November 17, 2026</dd></div><div><dt class="meta">Length</dt><dd>2 min read</dd></div><div><dt class="meta">Filed under</dt><dd><ul class="tag-list"><li><a class="tag" href="/astro-blog-template/tags/css/">CSS</a></li><li><a class="tag" href="/astro-blog-template/tags/design/">Design</a></li></ul></dd></div></dl></aside><div class="prose"><p>The quick way to make a dark theme is to swap the background and text colors and call it done. The result is usually readable and usually a little wrong: white text that glares, accent colors that vibrate, shadows that have nowhere to fall.</p>
+<p>A dark theme is a second design that shares a skeleton with the first. It deserves an afternoon of its own.</p>
+<h2 id="start-with-variables">Start with variables</h2>
+<p>Name colors by the job they do, not by what they look like.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">:root</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  --paper</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#f3eee3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  --ink</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#1e1a15</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  --accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#b03a1b</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">@media</span><span style="color:#E1E4E8"> (prefers-color-scheme: dark) {</span></span>
+<span class="line"><span style="color:#B392F0">  :root</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    --paper</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#15130f</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    --ink</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#ece5d6</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    --accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#f08a60</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Now every rule in the stylesheet asks for <code>--ink</code> and gets the right one.</p>
+<h2 id="what-to-change-by-hand">What to change by hand</h2>
+<p><strong>Soften the extremes.</strong> Pure white on pure black is harsh at night. A warm off-white on a very dark brown or blue is easier to stay with.</p>
+<p><strong>Lighten the accent.</strong> A deep red that reads well on cream turns muddy on charcoal. Pick a lighter, slightly less saturated relative and check its contrast again. The target is still 4.5 to 1 for body text.</p>
+<p><strong>Rethink depth.</strong> Shadows barely show on dark surfaces. Raise a panel by making it a shade lighter than the page.</p>
+<p><strong>Look at the weight.</strong> Light text on a dark ground appears bolder than the reverse. If your font allows it, drop the weight a touch.</p>
+<h2 id="let-people-choose">Let people choose</h2>
+<p>Follow the system setting by default, because the visitor already told their device what they prefer. Then offer a switch anyway, and remember the answer. Some people like a dark phone and a light page to read on.</p>
+<p>Two themes means twice the checking. It is worth it the first time somebody opens your site in bed.</p>
+</div></div><nav class="post-nav" aria-label="More notes"><p class="prev"><span class="meta">Earlier</span><a href="/astro-blog-template/posts/ship-the-static-site-first/">Ship the static site first</a></p></nav></article></main><aside class="newsletter" aria-labelledby="newsletter-title"><div class="wrap"><div class="newsletter-copy"><p class="meta">By email</p><h2 id="newsletter-title">Get the next note when it is ready.</h2><p>One short email whenever a new post goes up, a couple of times a month. No tracking, and you can leave whenever you like.</p></div><form class="form" action="https://formtango.com/f/YOUR_NEWSLETTER_FORM_ID" method="POST" data-contact data-success="You are on the list. Thanks for reading!"><div class="field"><label for="newsletter-email">Email address</label><div class="field-row"><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="button" type="submit">Subscribe</button></div></div><input class="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"><p data-status role="status" hidden></p></form></div></aside><footer class="site-footer"><div class="wrap"><p>&copy; 2026 Odette Marlow</p><ul><li><a href="/astro-blog-template/rss.xml">RSS feed</a></li><li><a href="/astro-blog-template/tags/">Tags</a></li><li><a href="/astro-blog-template/contact/">Contact</a></li></ul><p>Forms handled by <a href="https://formtango.com">FormTango</a></p></div></footer><script>
+      // Light / dark switch. Follows the system until someone chooses, then remembers.
+      (function () {
+        var toggle = document.querySelector('[data-theme-toggle]');
+        if (!toggle) return;
+        toggle.addEventListener('click', function () {
+          var root = document.documentElement;
+          var current =
+            root.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var next = current === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+      })();
+
+      // Sends each form to its FormTango address without leaving the page.
+      // With JavaScript off, the forms still work as a normal POST.
+      // While an address in src/forms.ts still contains "YOUR_", the form runs in demo mode.
+      (function () {
+        document.querySelectorAll('form[data-contact]').forEach(function (form) {
+          var status = form.querySelector('[data-status]');
+          var button = form.querySelector('button[type="submit"]');
+          var label = button.textContent;
+
+          function say(text, kind) {
+            status.textContent = text;
+            status.dataset.kind = kind;
+            status.hidden = false;
+          }
+
+          form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (form.action.indexOf('YOUR_') !== -1) {
+              say(
+                'Demo mode: nothing was sent. Add your FormTango form address in src/forms.ts and this form will send for real.',
+                'info'
+              );
+              return;
+            }
+            button.disabled = true;
+            button.textContent = 'Sending…';
+            fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+              .then(function (response) {
+                return response.json().then(function (body) {
+                  if (!response.ok || !body.ok) throw body;
+                });
+              })
+              .then(function () {
+                form.reset();
+                say(form.dataset.success || 'Thanks! Your message has been sent.', 'ok');
+              })
+              .catch(function (body) {
+                say((body && body.error) || 'Something went wrong. Please try again.', 'error');
+              })
+              .then(function () {
+                button.disabled = false;
+                button.textContent = label;
+              });
+          });
+        });
+      })();
+    </script></body></html>

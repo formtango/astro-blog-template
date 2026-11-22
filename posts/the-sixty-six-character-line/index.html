@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The sixty-six character line | Galley</title><meta name="description" content="Why the width of a paragraph matters more than the font you spent a week choosing."><meta name="author" content="Odette Marlow"><meta name="generator" content="Astro v7.3.8"><link rel="canonical" href="https://formtango.github.io/astro-blog-template/posts/the-sixty-six-character-line/"><link rel="icon" type="image/svg+xml" href="/astro-blog-template/favicon.svg"><link rel="alternate" type="application/rss+xml" title="Galley" href="/astro-blog-template/rss.xml"><link rel="sitemap" href="/astro-blog-template/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="The sixty-six character line"><meta property="og:description" content="Why the width of a paragraph matters more than the font you spent a week choosing."><meta property="og:url" content="https://formtango.github.io/astro-blog-template/posts/the-sixty-six-character-line/"><meta property="og:site_name" content="Galley"><meta name="twitter:card" content="summary"><meta name="theme-color" content="#f3eee3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#15130f" media="(prefers-color-scheme: dark)"><script>
+      // Apply a saved theme before the page paints, so there is no flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/astro-blog-template/_astro/Base.BG5ZlA61.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap"><a class="brand" href="/astro-blog-template/" aria-label="Galley, home"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M13.5 6h11v2.6h-2.6V26h-2.6V8.6h-2.5V26h-2.6v-7.6c-3.9-.2-6.7-2.8-6.7-6.2C7.5 8.6 10.2 6 13.5 6z"></path></svg>Galley</a><nav class="site-nav" aria-label="Main"><ul><li><a href="/astro-blog-template/" aria-current="page">Posts</a></li><li><a href="/astro-blog-template/tags/">Tags</a></li><li><a href="/astro-blog-template/about/">About</a></li><li><a href="/astro-blog-template/contact/">Contact</a></li></ul></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch between light and dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path fill="currentColor" d="M12 3a9 9 0 0 1 0 18z"></path></svg></button></div></header><main id="main" tabindex="-1"><article class="wrap"><header class="post-head"><p class="meta">Note 01<span class="dot" aria-hidden="true">/</span><time datetime="2026-10-27T00:00:00.000Z">October 27, 2026</time></p><h1>The sixty-six character line</h1><p class="standfirst">Why the width of a paragraph matters more than the font you spent a week choosing.</p></header><div class="post-body"><aside class="post-margin" aria-label="About this note"><dl><div><dt class="meta">Written by</dt><dd><a href="/astro-blog-template/about/">Odette Marlow</a></dd></div><div><dt class="meta">Published</dt><dd>October 27, 2026</dd></div><div><dt class="meta">Length</dt><dd>2 min read</dd></div><div><dt class="meta">Filed under</dt><dd><ul class="tag-list"><li><a class="tag" href="/astro-blog-template/tags/typography/">Typography</a></li><li><a class="tag" href="/astro-blog-template/tags/css/">CSS</a></li></ul></dd></div></dl></aside><div class="prose"><p>Most of the pages I am asked to fix have the same problem, and it is not the typeface. It is the width. Somebody chose a lovely serif, set it at a sensible size, and then let each paragraph run from one edge of a wide monitor to the other. The eye reaches the end of a line and has to travel so far back that it loses its place. Readers do not describe this as a line length problem. They say the site feels tiring and then they leave.</p>
+<p>Printers settled this long ago. A comfortable line of body text holds somewhere between 45 and 75 characters, spaces included, and 66 is the number that gets quoted most often. Shorter than that and the eye is forever turning corners. Longer and the return trip gets risky.</p>
+<p>On the web the fix is one declaration:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.prose</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  max-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">60</span><span style="color:#F97583">ch</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>The <code>ch</code> unit is the width of the zero in the current font. Because most letters are narrower than a zero, <code>60ch</code> lands close to 66 real characters in a typical serif. Test it by counting an actual line instead of trusting the arithmetic.</p>
+<h2 id="two-things-follow">Two things follow</h2>
+<p>The first is that line height depends on line length. A longer line needs more space between lines so the eye can find its way home. Around 1.6 suits a 66 character measure. A narrow caption can sit at 1.35 and look better for it.</p>
+<p>The second is that a narrow column leaves room to spare on a large screen, and that room is a gift. Put dates, notes and small navigation in the margin. Let a figure break out wider than the text when it has earned the attention.</p>
+<p>Set the measure first. Every other decision on the page gets easier once the paragraph is the right width.</p>
+</div></div><nav class="post-nav" aria-label="More notes"><p class="next"><span class="meta">Later</span><a href="/astro-blog-template/posts/a-form-is-a-conversation/">A form is a conversation</a></p></nav></article></main><aside class="newsletter" aria-labelledby="newsletter-title"><div class="wrap"><div class="newsletter-copy"><p class="meta">By email</p><h2 id="newsletter-title">Get the next note when it is ready.</h2><p>One short email whenever a new post goes up, a couple of times a month. No tracking, and you can leave whenever you like.</p></div><form class="form" action="https://formtango.com/f/YOUR_NEWSLETTER_FORM_ID" method="POST" data-contact data-success="You are on the list. Thanks for reading!"><div class="field"><label for="newsletter-email">Email address</label><div class="field-row"><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="button" type="submit">Subscribe</button></div></div><input class="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"><p data-status role="status" hidden></p></form></div></aside><footer class="site-footer"><div class="wrap"><p>&copy; 2026 Odette Marlow</p><ul><li><a href="/astro-blog-template/rss.xml">RSS feed</a></li><li><a href="/astro-blog-template/tags/">Tags</a></li><li><a href="/astro-blog-template/contact/">Contact</a></li></ul><p>Forms handled by <a href="https://formtango.com">FormTango</a></p></div></footer><script>
+      // Light / dark switch. Follows the system until someone chooses, then remembers.
+      (function () {
+        var toggle = document.querySelector('[data-theme-toggle]');
+        if (!toggle) return;
+        toggle.addEventListener('click', function () {
+          var root = document.documentElement;
+          var current =
+            root.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var next = current === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+      })();
+
+      // Sends each form to its FormTango address without leaving the page.
+      // With JavaScript off, the forms still work as a normal POST.
+      // While an address in src/forms.ts still contains "YOUR_", the form runs in demo mode.
+      (function () {
+        document.querySelectorAll('form[data-contact]').forEach(function (form) {
+          var status = form.querySelector('[data-status]');
+          var button = form.querySelector('button[type="submit"]');
+          var label = button.textContent;
+
+          function say(text, kind) {
+            status.textContent = text;
+            status.dataset.kind = kind;
+            status.hidden = false;
+          }
+
+          form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (form.action.indexOf('YOUR_') !== -1) {
+              say(
+                'Demo mode: nothing was sent. Add your FormTango form address in src/forms.ts and this form will send for real.',
+                'info'
+              );
+              return;
+            }
+            button.disabled = true;
+            button.textContent = 'Sending…';
+            fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+              .then(function (response) {
+                return response.json().then(function (body) {
+                  if (!response.ok || !body.ok) throw body;
+                });
+              })
+              .then(function () {
+                form.reset();
+                say(form.dataset.success || 'Thanks! Your message has been sent.', 'ok');
+              })
+              .catch(function (body) {
+                say((body && body.error) || 'Something went wrong. Please try again.', 'error');
+              })
+              .then(function () {
+                button.disabled = false;
+                button.textContent = label;
+              });
+          });
+        });
+      })();
+    </script></body></html>
